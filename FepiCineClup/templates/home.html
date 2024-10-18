@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussões sobre Filmes</title>
+    <link rel="stylesheet" href="{% static 'FepiCineClup/css/style.css' %}">
+
+</head>
+<body>
+
+<header>
+    <h1>Discussões sobre Filmes</h1>
+</header>
+
+<div class="banner">
+    <img src="{% static 'FepiCineClup/images/EntreEstrelas.jpg' %}" alt="Filme 1">
+    <img src="{% static 'FepiCineClup/images/JurasQuePark.jpg' %}" alt="Filme 2">
+    <img src="{% static 'FepiCineClup/images/Opaizao.jpg' %}" alt="Filme 3">
+</div>
+
+<div class="movie-list">
+    <h2>Filmes em Destaque</h2>
+    <div class="movie">
+        <a href="detalhes-filme1.html">Filme 1</a>
+    </div>
+    <div class="movie">
+        <a href="detalhes-filme2.html">Filme 2</a>
+    </div>
+    <div class="movie">
+        <a href="detalhes-filme3.html">Filme 3</a>
+    </div>
+    <div class="movie">
+        <a href="detalhes-filme4.html">Filme 4</a>
+    </div>
+    <div class="movie">
+        <a href="detalhes-filme5.html">Filme 5</a>
+    </div>
+</div>
+
+</body>
+</html>
