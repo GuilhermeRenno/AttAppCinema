@@ -4,53 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Filme</title>
+    <title>{{ filme.titulo }}</title>
+    <link rel="stylesheet" href="{% static 'FepiCineClup/css/style.css' %}">
 </head>
 <body>
 
-<h1 id="movie-title"></h1>
-<p id="movie-description"></p>
+<header>
+    <h1>{{ filme.titulo }}</h1>
+</header>
 
-<script>
-    // Função para obter o parâmetro de consulta da URL
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    // Função para atualizar os detalhes do filme com base no ID
-    function loadMovieDetails() {
-        const movieId = getQueryParam('id');
-        
-        // Exemplo de dados de filmes
-        const movies = {
-            filme1: {
-                title: "Filme 1",
-                description: "Descrição do Filme 1."
-            },
-            filme2: {
-                title: "Filme 2",
-                description: "Descrição do Filme 2."
-            },
-            filme3: {
-                title: "Filme 3",
-                description: "Descrição do Filme 3."
-            }
-            // Adicione mais filmes conforme necessário
-        };
-
-        const movie = movies[movieId];
-        if (movie) {
-            document.getElementById('movie-title').textContent = movie.title;
-            document.getElementById('movie-description').textContent = movie.description;
-        } else {
-            document.getElementById('movie-title').textContent = "Filme não encontrado.";
-        }
-    }
-
-    // Chama a função ao carregar a página
-    window.onload = loadMovieDetails;
-</script>
+<div class="movie-detail-container">
+    <div class="movie-image">
+        <img src="{{ filme.imagem }}" alt="{{ filme.titulo }}">
+    </div>
+    <div class="movie-info">
+        <h2>Detalhes do Filme</h2>
+        <p><strong>Ano:</strong> {{ filme.ano }}</p>
+        <p><strong>Gênero:</strong> {{ filme.genero }}</p>
+        <p><strong>Resumo:</strong> {{ filme.resumo }}</p>
+    </div>
+</div>
 
 </body>
 </html>

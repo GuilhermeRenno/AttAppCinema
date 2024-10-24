@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discussões sobre Filmes</title>
     <link rel="stylesheet" href="{% static 'FepiCineClup/css/style.css' %}">
-
+    <script>
+        function redirectToDetails(filmId) {
+            // Redireciona o usuário para a página de detalhes do filme com base no ID
+            window.location.href = '/detail/?filmId=' + filmId;
+        }
+    </script>
 </head>
 <body>
 
@@ -15,27 +20,28 @@
 </header>
 
 <div class="banner">
-    <img src="{% static 'FepiCineClup/images/EntreEstrelas.jpg' %}" alt="Filme 1">
-    <img src="{% static 'FepiCineClup/images/JurasQuePark.jpg' %}" alt="Filme 2">
-    <img src="{% static 'FepiCineClup/images/Opaizao.jpg' %}" alt="Filme 3">
-</div>
-
-<div class="movie-list">
-    <h2>Filmes em Destaque</h2>
-    <div class="movie">
-        <a href="detalhes-filme1.html">Filme 1</a>
+    <div class="movie-item">
+        <img src="{% static 'FepiCineClup/images/EntreEstrelas.jpg' %}" alt="Filme 1" onclick="redirectToDetails(1)">
+        <div class="movie-info">
+            <h3>Interstellar</h3>
+            <p>2014</p>
+        </div>
     </div>
-    <div class="movie">
-        <a href="detalhes-filme2.html">Filme 2</a>
+    
+    <div class="movie-item">
+        <img src="{% static 'FepiCineClup/images/JurasQuePark.jpg' %}" alt="Filme 2" onclick="redirectToDetails(2)">
+        <div class="movie-info">
+            <h3>Jurassic Park</h3>
+            <p>1993</p>
+        </div>
     </div>
-    <div class="movie">
-        <a href="detalhes-filme3.html">Filme 3</a>
-    </div>
-    <div class="movie">
-        <a href="detalhes-filme4.html">Filme 4</a>
-    </div>
-    <div class="movie">
-        <a href="detalhes-filme5.html">Filme 5</a>
+    
+    <div class="movie-item">
+        <img src="{% static 'FepiCineClup/images/Opaizao.jpg' %}" alt="Filme 3" onclick="redirectToDetails(3)">
+        <div class="movie-info">
+            <h3>O Paizão</h3>
+            <p>1999</p>
+        </div>
     </div>
 </div>
 
